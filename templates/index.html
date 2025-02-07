@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/responsive.css')}}">
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Botão responsivo -->
+        <button id="OtherMenu" onclick="ShowMenu();"> <img src="{{url_for('static', filename='img/iconNavegacao.jpg')}}"> </button>
+
+        <div class="menuLinks">    
+            <div class="logo">
+                <img src="{{url_for('static', filename='img/LogoP.png')}}" alt="Imagem logo da prefeitura de Fortaleza">
+            </div>
+
+            <a href="#Calculadora">Calcular IMC <hr></a>
+            <a href="#atividades">Atividades <hr></a>
+            <a href="#Hero1">Home <hr></a>
+        </div>
+
+        <div class="menuButtons">
+            <button class="buttonIcon"><img src="{{url_for('static', filename='img/IconPerfil.png')}}" alt="Ícone de perfil"> </button>
+            <button class="buttonIcon"><img src="{{url_for('static', filename='img/IconNotificacao.png')}}" alt="Ícone de e-mail"> </button>
+            <button id="buttonLogin">Login</button>
+        </div>
+
+        <div class="menuLinksCollapse">    
+            <div class="logo">
+                <img src="{{url_for('static', filename='img/LogoP.png')}}" alt="Imagem logo da prefeitura de Fortaleza">
+            </div>
+    
+            <a href="#Calculadora">Calcular IMC <hr></a>
+            <a href="#atividades">Atividades <hr></a>
+            <a href="#Hero1">Home <hr></a>
+            
+        </div>
+    </nav>
+
+</body>
+</html>

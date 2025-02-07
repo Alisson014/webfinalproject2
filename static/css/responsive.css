@@ -1,0 +1,195 @@
+@media screen and (max-width: 1100px){
+    .Atividades{
+        flex-flow: row wrap;
+    }
+    .card{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .HeroInfo{
+        flex-direction: column;
+    }
+    .TextoInfo{
+        width: 80%;
+    }
+    .imagemInfo{
+        width: 80%;
+    }
+    #imgLeft{
+        display: none;
+    }
+    #imgRight{
+        display: flex;
+    }
+
+    .DadosIMC{
+        width: 40%;
+    }
+    .ResultadoIMC{
+        margin-left: 0;
+        margin-top: -80px;
+        padding-left: 0;
+    }
+    .Circurlo{
+        visibility: hidden;
+    }
+    .Quadrado{
+        left: -20px;
+    }
+
+    .title{
+        font-size: 5.4vw;
+    }
+    .card{
+        width: 40%;
+    }
+
+
+    .LastLine button{
+        display: flex;
+    }
+    .OutrosLinks{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 650px){
+    #OtherMenu{
+        display: flex;
+    }
+    .menuLinks{
+        display: none;
+    }
+    .logo{
+        display: none;
+    }
+    .menuLinksCollapse{
+        display: flex;
+    }
+
+
+
+    #imgBg{
+        width: 130%;
+        height: 700px;
+        transition: 1s;
+    }
+    .heroConteudo{
+        margin-left: -130%;
+        height: 700px;
+    }
+    .heroConteudo h1{
+        font-size: 36px;
+    }
+    .heroConteudo p{
+        font-size: 22px;
+    }
+    .heroConteudo img{
+        width: 35%;
+    }
+
+    .TextoInfo h1{
+        font-size: 5.8vw;
+        line-height: 100%;
+    }
+
+    .DadosIMC{
+        width: 50%;
+    }
+    .ResultadoIMC{
+        width: 50%;
+    }
+    #bf1{
+        font-size: 15px;
+        padding: 6px 8px;
+    }
+    #bf2{
+        font-size: 15px;
+        padding: 6px 8px;
+    }
+    .Quadrado{
+        visibility: hidden;
+    }
+    .Circurlo{
+        visibility: visible;
+    }
+
+    .ConteudoTexto i{
+        font-size: 22px;
+    }
+    .ConteudoTexto i br{
+        display: none;
+    }
+    .ConteudoTexto p{
+        font-size: 20px;
+    }
+
+    .title{
+        font-size: 5.8vw;
+    }
+    .card{
+        width: 52%;
+    }
+
+    footer{
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+    .SobrePrefeitura, .LinksDiversos, .FooterContactUs{
+        width: 42%;
+    }
+}
+@media screen and (max-width: 450px){
+    .DadosIMC{
+        width: 70%;
+    }
+    .ResultadoIMC{
+        width: 70%;
+    }
+
+
+    .title{
+        font-size: 6vw;
+    }
+    .card{
+        width: 80%;
+    }
+
+    footer{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .SobrePrefeitura, .LinksDiversos, .FooterContactUs{
+        width: 80%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .LastLine span{
+        flex-direction: column;
+        gap: 0;
+    }
+    .LastLine p{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .DadosIMC, .ResultadoIMC{
+        width: 85%;
+    }
+    .inputsIMC{
+        gap: 10px;
+    }
+
+    .title{
+        font-size: 9vw;
+        max-width: 90%;
+    }
+}
