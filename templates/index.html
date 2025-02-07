@@ -17,14 +17,14 @@
                 <img src="{{url_for('static', filename='img/LogoP.png')}}" alt="Imagem logo da prefeitura de Fortaleza">
             </div>
 
-            <a href="#Calculadora">Calcular IMC <hr></a>
+            <!-- <a href="#Calculadora">Calcular IMC <hr></a>
             <a href="#atividades">Atividades <hr></a>
-            <a href="#Hero1">Home <hr></a>
+            <a href="#Hero1">Home <hr></a> -->
         </div>
 
         <div class="menuButtons">
-            <button class="buttonIcon"><img src="{{url_for('static', filename='img/IconPerfil.png')}}" alt="Ícone de perfil"> </button>
-            <button class="buttonIcon"><img src="{{url_for('static', filename='img/IconNotificacao.png')}}" alt="Ícone de e-mail"> </button>
+            <!-- <button class="buttonIcon"><img src="{{url_for('static', filename='img/IconPerfil.png')}}" alt="Ícone de perfil"> </button>
+            <button class="buttonIcon"><img src="{{url_for('static', filename='img/IconNotificacao.png')}}" alt="Ícone de e-mail"> </button> -->
             <button id="buttonLogin">Login</button>
         </div>
 
@@ -33,12 +33,41 @@
                 <img src="{{url_for('static', filename='img/LogoP.png')}}" alt="Imagem logo da prefeitura de Fortaleza">
             </div>
     
-            <a href="#Calculadora">Calcular IMC <hr></a>
+            <!-- <a href="#Calculadora">Calcular IMC <hr></a>
             <a href="#atividades">Atividades <hr></a>
             <a href="#Hero1">Home <hr></a>
-            
+             -->
         </div>
     </nav>
 
+
+    <div class="HeroInitial" id="Hero1">
+        <img class="imgBg" src="{{url_for('static', filename='img/exer01.jpg')}}"/>
+        <img class="imgBg" src="{{url_for('static', filename='img/exer02.jpg')}}"/>
+        <img class="imgBg" src="{{url_for('static', filename='img/exer03.jpg')}}"/>
+        <img class="imgBg" src="{{url_for('static', filename='img/exer04.jpg')}}"/>
+        <img class="imgBg disappear" src="{{url_for('static', filename='img/exer06.jpg')}}"/>
+        
+        <div class="heroConteudo">
+            <img src="{{url_for('static', filename='img/saude-e-bem-estar.png')}}">
+            <h1>Saúde e Bem-estar</h1>
+            <p>Como parte integrande dos demais 16 Objetivos de Desenvolvimento
+                <br>Sustentável da ONU, o presente ODS (3) tem por objetivo ímpar
+                <br>a asseguração de uma vida saudável e a promoção do bem-estar para
+                <br>todos os seres humanos sem qualquer distinção.
+            </p>
+            <br>
+            <p> 
+                <button class="Botao">Saiba Mais</button> &nbsp; 
+                <button class="Botao2">Outros</button>
+            </p>
+            
+        </div>
+    </div>
+
+
+    <script src="{{url_for('static', filename='js/script.js')}}">
+
+    </script>
 </body>
 </html>

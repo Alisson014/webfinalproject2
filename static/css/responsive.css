@@ -72,13 +72,13 @@
 
 
 
-    #imgBg{
+    .imgBg{
         width: 130%;
         height: 700px;
         transition: 1s;
     }
     .heroConteudo{
-        margin-left: -130%;
+        /* margin-left: -130%; */
         height: 700px;
     }
     .heroConteudo h1{

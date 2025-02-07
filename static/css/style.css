@@ -103,6 +103,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
+    font-weight: bold;
     /*justify-content: center;
     align-items: center; */
     font-size: 16px;
@@ -193,3 +194,104 @@ body{
     background-color: black;
 }
 
+
+
+
+
+
+/* Initial hero*/
+.HeroInitial{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 780px;
+    z-index: 1;
+    position: relative;
+}
+.imgBg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: 1s;
+}
+
+.heroConteudo{
+    width: 100%;
+    height: 100%;
+    text-align: center;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f3f3f3;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 1s;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0000005e;
+    /* box-shadow: 1px 1px 5px 100vw #0000005e; */
+    position: absolute;
+
+    animation-name: aniInitHero;
+    animation-duration: .8s;
+}
+@keyframes aniInitHero{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to{
+        opacity: 1.5;
+        transform: translateY(0);
+    }
+}
+.disappear{
+    opacity: 0;
+    transition: 1s;
+}
+
+.heroConteudo img{
+    width: 20%;
+}
+
+.heroConteudo h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4.5vw;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 2px 3px black;
+}
+.heroConteudo p{
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: lighter;
+    text-shadow: 1px 2px 3px black;
+}
+
+
+.Botao, .Botao2{
+    background-color: #00a59a;
+    color: white;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    border: 1px solid #00a59a;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.Botao:hover{
+    background-color: #005c56;
+    border: 1px solid #005c56;
+}
+.Botao2{
+    background-color: transparent;
+    border: 1px solid rgba(200, 200, 200, 0.7);
+    transition: 0.4s;
+}
+.Botao2:hover{
+    background-color: rgba(200, 200, 200, 0.8);
+    color: black;
+    transition: 0.4s;
+}
