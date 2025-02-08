@@ -27,7 +27,9 @@
         <div class="menuButtons">
             <!-- <button class="buttonIcon"><img src="{{url_for('static', filename='img/IconPerfil.png')}}" alt="Ícone de perfil"> </button>
             <button class="buttonIcon"><img src="{{url_for('static', filename='img/IconNotificacao.png')}}" alt="Ícone de e-mail"> </button> -->
-            <button id="buttonLogin">Login</button>
+            <form action="/login" method="post">
+              <button id="buttonLogin">Login</button>
+            </form>
         </div>
 
         <div class="menuLinksCollapse">    
@@ -332,11 +334,31 @@
               </div>
             </div>
           </div>
+
+          <div class="row align-items-md-stretch margin-top-40">
+            <div class="col-md-6">
+              <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <h2>Add borders</h2>
+                <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+                <button class="btn btn-outline-secondary" type="button">Example button</button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="h-100 p-5 text-bg-dark rounded-3">
+                <h2>Change the background</h2>
+                <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
+                <button class="btn btn-outline-light" type="button">Example button</button>
+              </div>
+            </div>
+
+          </div>
     </main>
 
     <footer class="Footer">
+        <h1 class="fh1">Saúde e Bem-Estar</h1>
+        <br/>
         <div class="container">
-            <footer class="py-5">
+            <footer >
               <div class="row">
                 <div class="col-6 col-md-2 mb-3">
                   <h5>Section</h5>
@@ -373,23 +395,24 @@
           
                 <div class="col-md-5 offset-md-1 mb-3">
                   <form>
-                    <h5>Subscribe to our newsletter</h5>
-                    <p class="text-footer">Monthly digest of what's new and exciting from us.</p>
+                    <h5>Deixe sua opinião</h5>
+                    <p class="text-footer">Estamos sempre abertos a novas sugestões</p>
                     <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                      <label for="newsletter1" class="visually-hidden">Email address</label>
-                      <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                      <button class="btn btn-primary" type="button">Subscribe</button>
+                      <!-- <label for="newsletter1" class="visually-hidden">Email address</label> -->
+                      
+                      <textarea id="newsletter1" class="form-control" rows="2" placeholder="Adicionar comentário" required></textarea>
+                      <button class="btn btn-primary" >Enviar</button>
                     </div>
                   </form>
                 </div>
               </div>
           
-              <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+              <div class="d-flex flex-column flex-sm-row justify-content-between py-4 border-top">
                 <p>&copy; 2024 Company, Inc. All rights reserved.</p>
                 <ul class="list-unstyled d-flex">
-                  <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-                  <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-                  <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+                  <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="{{url_for('static', filename='img/IconEmail.png')}}" class="bi" width="34" height="24"/></a></li>
+                  <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="{{url_for('static', filename='img/IconWhatsApp.png')}}" class="bi" width="24" height="24"/></a></li>
+                  <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="{{url_for('static', filename='img/IconFacebook.png')}}" class="bi" width="14" height="24"/></a></li>
                 </ul>
               </div>
             </footer>

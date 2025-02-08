@@ -12,6 +12,8 @@ body{
     box-sizing: border-box;    
 }
 
+/* NavBar */
+
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -298,6 +300,9 @@ body{
     transition: 0.4s;
 }
 
+
+/* ODS cards */
+
 .footer-card{
     background-color: #000;
     position: absolute;
@@ -352,7 +357,7 @@ body{
 }
 
 
-
+/* Barra da pesquisa */
 .Pesquisa{
     width: 100%;
     display: flex;
@@ -394,6 +399,9 @@ body{
 .Pesquisa form button:hover img{
     background-color: #eee;
 }
+
+
+/* Texto Sobre */
 
 .ConteudoTexto{
     display: flex;
@@ -450,12 +458,19 @@ body{
     color: #00000088;
 }
 
+/* Notícias */
 
+.margin-top-40{
+    margin-top: 20px !important;
+}
+
+
+/* Footer */
 .Footer{
     width: 100%;
     height: fit-content;
     background-color: #000;
-    padding: 50px 0px 50px 0px;
+    padding: 50px 0px 0px 0px;
     color: #fff;
 }
 .text-footer{
@@ -464,4 +479,166 @@ body{
 .form-control{
     background-color: #999 !important;
     border: 1px solid #999 !important;
+}
+.fh1{
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+
+
+/* Login Page */
+.AlertLogin{
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 5%;
+    width: 90%;
+    height: fit-content;
+}
+.AlertLogin hr{
+    width: 100%;
+    margin: 10px 0 0 0;
+    animation-name: aniLine;
+    animation-duration: 5s;
+}
+.AlertLogin p{
+    margin: 0;
+}
+.OnAlert{
+    display: block !important;
+}
+
+@keyframes aniLine{
+    from{
+        width: 90%;
+    }
+    to{
+        width: 0%;
+    }
+}
+
+
+.Login{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    height: 100vh;
+}
+.contenImage{
+    overflow: hidden;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenImage img{
+    height: 100%;
+}
+
+.ContainerForm{
+    background: linear-gradient(45deg, #00b8ab, #004641);
+    padding-left: 80px;
+    width: calc(65%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+
+}
+
+.ContainerForm h1{
+    font-size: 3.5rem;
+    color: #fff;
+    font-weight: bold;
+}
+.ContainerForm p{
+    font-size: 1.8rem;
+}
+.ContainerForm a{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-decoration: none;
+    float: right;
+}
+.ContainerForm a:hover{
+    text-decoration: underline;
+}
+
+
+.formInputs{
+    width: 60%;
+}
+.formInputs input{
+    background-color: #ffffff99 !important;
+}
+.formInputs label{
+    color: #000;
+}
+.formInputs input:focus label{
+    background-color: transparent !important;
+}
+.formInputs input[type="submit"],
+.formInputs input[type="button"]{
+    background: #055c49 !important;
+    border: none !important;
+    padding: 12px 0px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: bold;
+    transition: .4s;
+}
+.formInputs input[type="submit"]:hover,
+.formInputs input[type="button"]:hover{
+    background: #004440 !important;
+    letter-spacing: 1.4px;
+    transition: .4s;
+}
+.inputAnimation:nth-child(1){
+    animation-name: aniInp;
+    animation-duration: 1s;
+}
+.inputAnimation:nth-child(2){
+    animation-name: aniInp;
+    animation-duration: 1s;
+    animation-delay: .1s;
+}
+.inputAnimation:nth-child(3){
+    animation-name: aniInp;
+    animation-duration: 1s;
+    animation-delay: .2s;
+}
+.inputAnimation:nth-child(4){
+    animation-name: aniInp;
+    animation-duration: 1s;
+    animation-delay: .3s;
+}
+.inputAnimation:nth-child(5){
+    animation-name: aniInp;
+    animation-duration: 1s;
+    animation-delay: .4s;
+}
+.inputAnimation:nth-child(6){
+    animation-name: aniInp;
+    animation-duration: 1s;
+    animation-delay: .5s;
+}
+.inputAnimation:nth-child(7){
+    animation-name: aniInp;
+    animation-duration: 1s;
+    animation-delay: .6s;
+}
+@keyframes aniInp{
+    from{
+        transform: translateX(60%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1.5;
+    }
 }

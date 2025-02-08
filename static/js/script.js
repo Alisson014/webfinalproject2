@@ -56,10 +56,10 @@ bg1();
 
 function scrollOutros(){
     var out = document.getElementById('IdOutros').offsetTop;
-    console.log(out);
+    
     window.scrollTo({
         behavior: "smooth",
-        top: IdOutros
+        top: out - 100
     })
 }
 
