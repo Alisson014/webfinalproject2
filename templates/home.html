@@ -6,14 +6,111 @@
     <title>Home</title>
 
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/responsive.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 </head>
 <body>
 
+    <nav class="navbar">
+        <!-- Botão responsivo -->
+        <button id="OtherMenu" onclick="ShowMenu();"> <img src="{{url_for('static', filename='img/iconNavegacao.jpg')}}"> </button>
+
+        <div class="menuLinks">    
+            <div class="logo">
+                <img src="{{url_for('static', filename='img/LogoP.png')}}" alt="Imagem logo da prefeitura de Fortaleza">
+            </div>
+
+            <a href="#Calculadora">Calcular IMC <hr></a>
+            <a href="#atividades">Atividades <hr></a>
+            <a href="#Hero1">Home <hr></a>
+        </div>
+
+        <div class="menuButtons">
+            <button class="buttonIcon" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="{{url_for('static', filename='img/IconPerfil.png')}}" alt="Ícone de perfil"> </button>
+            <button class="buttonIcon"><img src="{{url_for('static', filename='img/IconNotificacao.png')}}" alt="Ícone de e-mail"> </button>
+            <form action="/logout" method="post">
+                <button class="buttonIcon"><img style="filter: invert(0);" src="{{url_for('static', filename='img/IconLogout.png')}}" alt="Ícone de e-mail"> </button>
+            </form>
+        </div>
+
+        <div class="menuLinksCollapse">    
+            <div class="logo">
+                <img src="{{url_for('static', filename='img/LogoP.png')}}" alt="Imagem logo da prefeitura de Fortaleza">
+            </div>
+    
+            <a href="#Calculadora">Calcular IMC <hr></a>
+            <a href="#atividades">Atividades <hr></a>
+            <a href="#Hero1">Home <hr></a>
+            
+        </div>
+    </nav>
+
+    <div class="HeroInitial" id="Hero1">
+        <img class="imgBg" src="{{url_for('static', filename='img/al01.jpg')}}"/>
+        <img class="imgBg" src="{{url_for('static', filename='img/al02.jpg')}}"/>
+        <img class="imgBg" src="{{url_for('static', filename='img/al03.jpg')}}"/>
+        <img class="imgBg" src="{{url_for('static', filename='img/exer07.jpg')}}"/>
+        <img class="imgBg" src="{{url_for('static', filename='img/exer08.jpg')}}"/>
+        <img class="imgBg disappear" src="{{url_for('static', filename='img/exer06.jpg')}}"/>
+        
+        <div class="heroWelcome">
+            <!-- <img src="{{url_for('static', filename='img/saude-e-bem-estar.png')}}"> -->
+            <h1>Bem-vindo, {{ nome }}</h1>
+            <p>A qui estão alguns recursor valiosos especialmente para você. Esperamos que o 
+                conteúdo da presente plataforma lhe ajude não só a se manter em dias com 
+                o ODS 3 (Saúde e Bem-Estar) da ONU, mas em qualquer aspecto importante relacionado
+                à sua saúde.
+            </p>
+            <br>
+            <p> 
+                <button class="Botao">Saiba Mais</button> &nbsp; 
+                <button class="Botao2" onclick="scrollOutros()">Outros</button>
+            </p>
+            
+        </div>
+    </div>
+
+
+    <!-- Modal Update dados -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Alterar dados</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+                <form class="formInputs w-100" action="http://127.0.0.1:5000/login/entrar" method="post">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="inputNome" name="User_nome" placeholder="Fulano Beltrano" value="{{ nome }}">
+                        <label for="floatingInput">Nome</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="Inputemail" name="User_email" placeholder="name@example.com" value="{{ email }}">
+                        <label for="floatingInput">E-mail</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="inputSenha" name="User_senha" placeholder="Password" value="{{ senha }}">
+                        <label for="floatingPassword">Senha</label>
+                    </div>
+                    <br/>
+    
+                    <input class="form-control" type="submit" value="Entrar" />                    
+                </form>    
+    
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='js/script.js')}}">    </script>
 
 </body>
 </html>
