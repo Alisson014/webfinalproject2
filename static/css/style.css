@@ -356,6 +356,22 @@ body{
     background-image: url(../img/ods10.webp);
 }
 
+.responsive-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+@media screen and (max-width: 1100px){
+    .card{
+        width: 250px !important;
+    }
+}
+@media screen and (max-width: 1000px){
+    .card{
+        width: 80% !important;
+        margin-left: 10%;
+    }
+}
+
 
 /* Barra da pesquisa */
 .Pesquisa{
@@ -549,6 +565,33 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
 
+}
+@media screen and (max-width: 950px){
+    .formInputs{
+        width: 90% !important;
+    }
+}
+@media screen and (max-width: 730px){
+    .ContainerForm h1{
+        font-size: 2rem !important;
+    }
+}
+@media screen and (max-width: 540px){
+    .Login{
+        flex-direction: column !important;
+    }
+    .contenImage{
+        width: 100% !important;
+    }
+    .contenImage img{
+        width: 100%;
+        height: max-content !important;
+        
+    }
+    .ContainerForm{
+        width: 100%;
+        padding: 20px;
+    }
 }
 
 .ContainerForm h1{
