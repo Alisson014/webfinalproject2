@@ -54,7 +54,14 @@ function bg2(){
 }
 bg1();
 
-
+function scrollOutros(){
+    var out = document.getElementById('IdOutros').offsetTop;
+    console.log(out);
+    window.scrollTo({
+        behavior: "smooth",
+        top: IdOutros
+    })
+}
 
 // function ValidarDados(){ 
 //     var idade = parseFloat(document.forms["formIMC"]["idade"].value);
