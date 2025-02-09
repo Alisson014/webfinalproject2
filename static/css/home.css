@@ -1,3 +1,29 @@
+.OnAlert2{
+    display: block !important;
+}
+.AlertAlter{
+    display: none;
+    position: fixed;
+    top: 100px;
+    left: 5%;
+    width: 90%;
+    height: 400px;
+    z-index: 100000000000000;
+}
+.AlertAlter hr{
+    width: 100%;
+    margin: 10px 0 0 0;
+    animation-name: aniLine;
+    animation-duration: 5s;
+}
+.AlertAlter p{
+    margin: 0;
+}
+.AlertAlter-on{
+    display: block !important;
+}
+
+
 .titulo{
     width: 90%;
     margin-left: 5%;

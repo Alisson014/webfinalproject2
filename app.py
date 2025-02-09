@@ -130,15 +130,51 @@ def editar():
     email = request.form.get('User_email')
     senha = request.form.get('User_senha')
 
-    cursor.execute("UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE email = ? AND senha = ?", (nome, email, senha, session.get("email"), session.get("senha")))
-    con.commit()
-    con.close()
+    if email == session.get("email"):
+        cursor.execute("UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE email = ? AND senha = ?", (nome, email, senha, session.get("email"), session.get("senha")))
 
-    session["nome"] = nome
-    session["email"] = email
-    session["senha"] = senha
+        con.commit()
+        con.close()
 
-    return redirect(url_for('Home'))
+        session["nome"] = nome
+        session["email"] = email
+        session["senha"] = senha
+        return redirect(url_for('Home'))
+
+    else:
+        isUsed = True
+        con.close()
+        return render_template("home.html", isUsed = isUsed, message = "Dados incorretos...")
+
+    
+
+
+@app.route('/deletar', methods=["POST"])
+def deletar():
+
+    email = request.form.get('emailD')
+    senha = request.form.get('senhaD')
+
+    con = sqlite3.connect('banco.db')
+    cursor = con.cursor()
+    
+    if (email == session.get("email")) and (senha == session.get("senha")):    
+        cursor.execute("DELETE FROM usuarios WHERE email = ? AND senha = ?", (email, senha))
+        con.commit()
+        con.close()
+
+        session["nome"] = None
+        session["email"] = None
+        session["senha"] = None
+        
+        return render_template("index.html")
+
+
+    else:
+        isUsed = True
+        con.close()
+        return render_template("home.html", isUsed = isUsed, message = "Dados incorretos...")
+
 
 
 @app.route('/logout', methods=["POST"])
