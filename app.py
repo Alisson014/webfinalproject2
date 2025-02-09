@@ -56,10 +56,32 @@ def cadastrar():
         cursor.execute('INSERT INTO usuarios(nome, email, senha) VALUES(?, ?, ?)', (nome, email, senha))
         con.commit()
         con.close()
-        return render_template("home.html", nome = nome, email = email, senha = senha)
+
+        con2 = sqlite3.connect("banco.db")
+        cursor2 = con.cursor()
+        cursor2.execute("SELECT * FROM comentarios")
+        allcoments = cursor2.fetchall()
+        con2.close()
+        print("\n")
+        print("\n")
+        print("\n")
+        print("\n")
+        print(allcoments)
+        print("\n")
+        print("\n")
+        print("\n")
+        print("\n")
+        print("\n")
+
+        return render_template("home.html", nome = nome, email = email, senha = senha, comentarios = allcoments)
 
     else: 
         return render_template("login.html", isUsed = isUsed, message = "Está conta já está cadastrada")
+
+
+@app.route('/logout', methods=["POST"])
+def Logout():
+    return redirect(url_for("index"))
 
 
 

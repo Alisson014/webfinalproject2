@@ -67,12 +67,429 @@
             <br>
             <p> 
                 <button class="Botao">Saiba Mais</button> &nbsp; 
-                <button class="Botao2" onclick="scrollOutros()">Outros</button>
+                <button class="Botao2" onclick="ScrolltoOutros()">Outros</button>
             </p>
             
         </div>
     </div>
 
+
+    <!-- Seções de elemento Hero -->
+    <section class="HeroInfo">
+        <div class="TextoInfo">
+            <h1>O que está afetando nossa população</h1>
+            <p>Em 2023, fortaleza foi declarada a terceira capital com maior número de pessoas sedentárias, um problema
+                grave e preocupante. Dessa forma a prefeitura de Fortaleza está elaborando uma série de atividades que 
+                buscam motivar, conscientizar e engajar a população no combate a essa problemática. 
+
+            </p>
+            
+            <p> 
+                <button class="Botao">Saiba Mais</button> &nbsp; 
+                <button class="Botao2" style="color: gray;">Outros</button>
+            </p>
+        </div>
+
+        <div class="imagemInfo">
+            <img src="{{ url_for('static', filename='img/al03.jpg') }}">
+        </div>
+    </section>
+
+    <section class="HeroInfo">
+        <div id="imgLeft" class="imagemInfo">
+            <img src="{{ url_for('static', filename='img/al01.jpg') }}">
+        </div>
+
+        <div class="TextoInfo">
+            <h1>Melhorando a sua alimentação</h1>
+            <p>Atualmente, manter uma alimentação saudável está cada vez mais difícil, mas fazer isso não significa não
+                poder mais comer pizza ou qualquer outra comida. Alimente-se de forma balanceada, dê preferência para 
+                alimentos verdes e coloridos, como frutas e legumes, e diminua a quantidade de frituras.
+            </p>
+            
+            <p> 
+                <button class="Botao">Saiba mais</button> &nbsp; 
+                <button class="Botao2" style="color: gray;">Outros</button>
+            </p>
+        </div>
+        <div id="imgRight" class="imagemInfo">
+            <img src="{{ url_for('static', filename='img/al01.jpg') }}">
+        </div>
+
+    </section>
+
+    <section class="HeroInfo">
+        <div class="TextoInfo">
+            <h1>Ponha o seu corpo para rodar</h1>
+            <p>A prática de exercícios traz inúmeros benefícios, tanto para a saúde do nosso corpo quanto para nossa mente e espírito.
+                Aproveite o fim de semana, passe por nossas praças verdes, chame os amigos para fazer uma trilha, ou ainda sim, se 
+                possível, busque utilizar uma bicicleta para andar em nossas ruas.
+
+            </p>
+            
+            <p> 
+                <button class="Botao">Saiba mais</button> &nbsp; 
+                <button class="Botao2" style="color: gray;">Outros</button>
+            </p>
+        </div>
+
+        <div class="imagemInfo">
+            <img src="{{ url_for('static', filename='img/exer06.jpg') }}">
+        </div>
+    </section>
+    
+    <h1 class="title coment"> O que estão comentando  </h1>
+    <div class="ConteinerComentarios">
+        {% for c in comentarios %}
+        <div class="ConteudoTexto">
+            <h1>{{ c[1] }}</h1>
+            <i>❝ {{ c[3] }} ❞</i>
+            <hr>
+            <span>{{ c[2] }}</span>
+    
+        </div>
+        {% endfor %}
+        <!-- <div class="ConteudoTexto">
+            <h1>Parabéns</h1>
+            <i>❝ Atividades muito bem organizadas e<br> instrutores excepcionais. ❞</i>
+            <hr>
+            <span>Diego Feitosa</span>
+    
+        </div>
+
+        <div class="ConteudoTexto">
+            <h1>Campanha deveras magnífica</h1>
+            <i>❝ De certo que apenas, solenemente, elogio-vos, <br>aguardando plenamente pela trilha coletiva ❞</i>
+            <hr>
+            <span>Magnus Terceiro</span>
+    
+        </div>
+
+        <div class="ConteudoTexto">
+            <h1>Querendo mais</h1>
+            <i>❝ Infelizmente não participei de todas<br> mas garanto que não tenho do que reclamar ❞</i>
+            <hr>
+            <span>Jerônimo dos Santos</span>
+    
+        </div>
+
+        <div class="ConteudoTexto">
+            <h1>Sugestão</h1>
+            <i>❝ Por que não Afertar lives para pessoas que não possam participar das atividades? ❞</i>
+            <hr>
+            <span>Ana Carvalho</span>
+    
+        </div> -->
+        
+    </div>
+    <div class="addcoment">
+        <!-- <button class="Botao"> Adicionar Comentário</button> -->
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Adicinar Comentário
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+
+                        <form action="http://127.0.0.1:5000/comentar">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="inputNome" name="Coment_nome" placeholder="Fulano Beltrano" value="{{ nome }}">
+                                <label for="floatingInput">Nome</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="inputNome" name="Coment_assunto" placeholder="Fulano Beltrano">
+                                <label for="floatingInput">Palavra-chave</label>
+                            </div>
+                            <textarea placeholder="Comente..." rows="2" name="comentario" maxlength="100"></textarea><br/>
+                            <button class="Botao"> <img src="{{ url_for('static', filename='img/IconEnviar.png') }}" style="width: 30px;" /> </button>
+                        </form>
+
+                    </div>
+                </div>
+              </div>
+            
+          </div>
+    </div>
+
+    
+
+    
+    <br/><br/>
+    
+    <!-- Atividades -->
+    <div class="titulo">
+        <h1>Confira as últimas atividade</h1>
+        <hr/>
+    </div>
+    <section class="Atividades" id="atividades">
+        <div class="card-ativ">
+            <div class="cabecalho dark">
+                <img src="{{ url_for('static', filename='img/IconTrilha.png') }}">
+            </div>
+            <br>
+            <h1>Trilha Coletiva</h1>
+            <!-- <br> -->
+            <p>Chame seus amigos e venha se exercitar e cuidar da sua saúde enquanto respira aquele ar e curte a natureza </p>
+            <!-- <br> -->
+            <button id="darkbutton">Inscrição</button>
+            <br>
+            <br>
+        </div>
+
+        <div class="card-ativ">
+            <div class="cabecalho">
+                <img src="{{ url_for('static', filename='img/IconAlimentacao.png') }}">
+            </div>
+            <br>
+            <h1>Lanche comunitário</h1>
+            <!-- <br> -->
+            <p>Participe de um evento solidário e de quebra ainda garante uma refeição saudável e várias dicas especiais</p>
+            <!-- <br> -->
+            <button>Inscrição</button>
+            <br>
+            <br>
+        </div>
+
+        <div class="card-ativ">
+            <div class="cabecalho azul">
+                <img src="{{ url_for('static', filename='img/IconHalter.png') }}">
+            </div>
+            <br>
+            <h1>Treino</h1>
+            <!-- <br> -->
+            <p>Com vários equipamentos e mentores qualificados, aproveite a semana para dar aquela calibrada no corpo</p>
+            <!-- <br> -->
+            <button id="azulbutton">Inscrição</button>
+            <br>
+            <br>
+        </div>
+
+        <div class="card-ativ">
+            <div class="cabecalho roxo">
+                <img src="{{ url_for('static', filename='img/IconPerfil.png') }}">
+            </div>
+            <br>
+            <h1>Cuidando de si</h1>
+            <!-- <br> -->
+            <p>Um encontro com uma especialista em "autocuidado", socialize e consiga várias dicas de como se cuidar</p>
+            <!-- <br> -->
+            <button id="roxobutton">Incrição</button>
+            <br>
+            <br>
+        </div>
+    </section>
+    
+    <br/><br/>
+
+    <!-- Calculadora IMC -->
+    <div class="HeroInfo" id="Calculadora">
+        <div class="DadosIMC">
+            <form onsubmit="return ValidarDados()" name="formIMC">
+                <h1>Verifique seu IMC</h1>
+                <br>
+                <strong style="width: calc(100% - 15px);">
+                    <label for="Idnome">Nome: </label>
+                    <input type="text" id="Idnome" name="nome" placeholder="Digite aqui...">
+                </strong>
+                <br>
+                <div class="inputsIMC">
+                    
+                    <strong>
+                        <label>Idade: </label>
+                        <input type="text" name="idade" placeholder="Digite aqui..." required>
+                    </strong>
+                    <br>
+                    <strong>
+                        <label>Peso: </label>
+                        <input type="number" step="0.01" name="peso" placeholder="Em Kg..." required>
+                    </strong>
+                    <br>
+                    <strong>
+                        <label >Altura: </label>
+                        <input type="number" step="0.01" name="altura" placeholder="Em metros..." required>
+                    </strong>
+                    <br>
+                    <strong>
+                        <br>
+                        <label id="Mensage"></label>
+                    </strong>
+                </div>
+                <br>
+                
+                <button id="bf1" class="Botao">Calcular</button>
+                <button id="bf2" type="button" class="Botao2" onclick="Redefirnir()">Redefinir</button>    
+            </form>
+            
+        </div>
+
+        <div class="ResultadoIMC">
+            <div class="Circurlo"></div>
+            <div class="Circurlo" id="c2"></div>
+            <div class="contentQuadrados">
+                <div class="Quadrado" id="q1"></div>
+                <div class="Quadrado" id="q2"></div>
+                <div class="Quadrado" id="q3"></div>
+                <div class="Quadrado" id="q4"></div>
+            </div>
+            <h2 id="Esperando">Esperando...</h2>
+            <!-- <h1 class="Imc">Adequado</h1> -->
+        </div>
+    </div>
+
+    <div class="titulo" id="outrosOdsc">
+        <h1>Outros Objetivos</h1>
+        <hr/>
+    </div>
+
+    <!-- Carroussel de ODSs -->
+    <div class="CarrousselODS">
+        <button> &#10092; </button>
+
+        <section>
+            <div class="ods">
+                <img src="{{ url_for('static', filename='img/ods1.avif') }}" />
+                <div class="SlideLabel">
+                    <h1>ODS 1</h1>
+                    <p>Erradicação da Pobreza</p>
+                </div>
+            </div>
+
+            <div class="ods">
+                <img src="{{ url_for('static', filename='img/ods2c.jpeg') }}" />
+                <div class="SlideLabel">
+                    <h1>ODS 2</h1>
+                    <p>Fome Zero e Agrucultura Sustentável</p>
+                </div>
+            </div>
+
+            <div class="ods">
+                <img src="{{ url_for('static', filename='img/ods4c.jpg') }}" />
+                <div class="SlideLabel">
+                    <h1>ODS 4</h1>
+                    <p>Educação de Qualidade</p>
+                </div>
+            </div>
+
+            <div class="ods">
+                <img src="{{ url_for('static', filename='img/ods5.jpg') }}" />
+                <div class="SlideLabel">
+                    <h1>ODS 5</h1>
+                    <p>Igualdade de Gênero</p>
+                </div>
+            </div>
+
+            <div class="ods">
+                <img src="{{ url_for('static', filename='img/ods6.webp') }}" />
+                <div class="SlideLabel">
+                    <h1>ODS 6</h1>
+                    <p>Água Potável e Saneamento</p>
+                </div>
+            </div>
+
+            <div class="ods">
+                <img src="{{ url_for('static', filename='img/ods7.webp') }}" />
+                <div class="SlideLabel">
+                    <h1>ODS 7</h1>
+                    <p>Energia Limpa e Acessível</p>
+                </div>
+            </div>
+
+            <div class="ods">
+                <img src="{{ url_for('static', filename='img/ods8.jpg') }}" />
+                <div class="SlideLabel">
+                    <h1>ODS 8</h1>
+                    <p>Trabalho Descente e Crescimento Econômico</p>
+                </div>
+            </div>
+
+            <div class="ods">
+                <img src="{{ url_for('static', filename='img/ods9c.jpeg') }}" />
+                <div class="SlideLabel">
+                    <h1>ODS 9</h1>
+                    <p>Indústria, Inovação e Infraestrutura</p>
+                </div>
+            </div>
+
+            <div class="ods">
+                <img src="{{ url_for('static', filename='img/ods10.webp') }}" />
+                <div class="SlideLabel">
+                    <h1>ODS 10</h1>
+                    <p>Redução das Desigualdades</p>
+                </div>
+            </div>
+        </section>
+
+        <button class="right"> &#10093; </button>
+    </div> 
+
+    <!-- Footer -->
+    <footer class="Footer">
+        <h1 class="fh1">Saúde e Bem-Estar</h1>
+        <br/>
+        <div class="container">
+            <footer >
+              <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                  <h5>Section</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">About</a></li>
+                  </ul>
+                </div>
+          
+                <div class="col-6 col-md-2 mb-3">
+                  <h5>Section</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">About</a></li>
+                  </ul>
+                </div>
+          
+                <div class="col-6 col-md-2 mb-3">
+                  <h5>Section</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-footer">About</a></li>
+                  </ul>
+                </div>
+          
+                <div class="col-md-5 offset-md-1 mb-3">
+                  <form>
+                    <h5>Deixe sua opinião</h5>
+                    <p class="text-footer">Estamos sempre abertos a novas sugestões</p>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                      <!-- <label for="newsletter1" class="visually-hidden">Email address</label> -->
+                      
+                      <textarea id="newsletter1" class="form-control" rows="2" placeholder="Adicionar comentário" required></textarea>
+                      <button class="btn btn-primary" >Enviar</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+          
+              <div class="d-flex flex-column flex-sm-row justify-content-between py-4 border-top">
+                <p>&copy; 2025 ONU, ods 3. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                  <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="{{url_for('static', filename='img/IconEmail.png')}}" class="bi" width="34" height="24"/></a></li>
+                  <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="{{url_for('static', filename='img/IconWhatsApp.png')}}" class="bi" width="24" height="24"/></a></li>
+                  <li class="ms-3"><a class="link-body-emphasis" href="#"><img src="{{url_for('static', filename='img/IconFacebook.png')}}" class="bi" width="14" height="24"/></a></li>
+                </ul>
+              </div>
+            </footer>
+          </div>
+    </footer>
 
     <!-- Modal Update dados -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -84,7 +501,7 @@
             </div>
             <div class="modal-body">
               
-                <form class="formInputs w-100" action="http://127.0.0.1:5000/login/entrar" method="post">
+                <form class="formInputs w-100" action="http://127.0.0.1:5000/atualizar" method="post">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="inputNome" name="User_nome" placeholder="Fulano Beltrano" value="{{ nome }}">
                         <label for="floatingInput">Nome</label>
@@ -99,8 +516,12 @@
                     </div>
                     <br/>
     
-                    <input class="form-control" type="submit" value="Entrar" />                    
-                </form>    
+                    <input class="form-control" type="submit" value="Salvar" />
+                    <input class="form-control" type="submit" value="Deletar" />
+                </form>
+                <!-- <form action="http://127.0.0.1:5000/excluir">
+                    
+                </form> -->
     
             </div>
           </div>
@@ -109,8 +530,13 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="{{url_for('static', filename='js/script.js')}}">    </script>
 
+    
+    <script src="{{url_for('static', filename='js/script.js')}}">    </script>
+    <script src="{{ url_for('static', filename='js/carrousselComents.js') }}">    </script>
+    <script src="{{ url_for('static', filename='js/carrousselOds.js') }}">    </script>
+    <script src="{{ url_for('static', filename='js/home.js') }}">    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

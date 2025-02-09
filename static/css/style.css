@@ -28,7 +28,7 @@ body{
     left: 0;
     border-bottom: 1px solid #0000005e;
     filter: drop-shadow(0px 5px 50px black);
-    z-index: 10;
+    z-index: 100;
 
     animation-name: aniNav;
     animation-duration: .4s;
@@ -451,7 +451,7 @@ body{
     width: 10%;
     height: 4px;
     margin-top: 8px;
-    background-color: #00a59a;
+    background-color: #007e63;
     align-self: center;
 }
 .ConteudoTexto p{
