@@ -58,7 +58,7 @@
         
         <div class="heroWelcome">
             <!-- <img src="{{url_for('static', filename='img/saude-e-bem-estar.png')}}"> -->
-            <h1>Bem-vindo, {{ nome }}</h1>
+            <h1>Bem-vindo, {{ session.nome }}</h1>
             <p>A qui estão alguns recursor valiosos especialmente para você. Esperamos que o 
                 conteúdo da presente plataforma lhe ajude não só a se manter em dias com 
                 o ODS 3 (Saúde e Bem-Estar) da ONU, mas em qualquer aspecto importante relacionado
@@ -149,37 +149,6 @@
     
         </div>
         {% endfor %}
-        <!-- <div class="ConteudoTexto">
-            <h1>Parabéns</h1>
-            <i>❝ Atividades muito bem organizadas e<br> instrutores excepcionais. ❞</i>
-            <hr>
-            <span>Diego Feitosa</span>
-    
-        </div>
-
-        <div class="ConteudoTexto">
-            <h1>Campanha deveras magnífica</h1>
-            <i>❝ De certo que apenas, solenemente, elogio-vos, <br>aguardando plenamente pela trilha coletiva ❞</i>
-            <hr>
-            <span>Magnus Terceiro</span>
-    
-        </div>
-
-        <div class="ConteudoTexto">
-            <h1>Querendo mais</h1>
-            <i>❝ Infelizmente não participei de todas<br> mas garanto que não tenho do que reclamar ❞</i>
-            <hr>
-            <span>Jerônimo dos Santos</span>
-    
-        </div>
-
-        <div class="ConteudoTexto">
-            <h1>Sugestão</h1>
-            <i>❝ Por que não Afertar lives para pessoas que não possam participar das atividades? ❞</i>
-            <hr>
-            <span>Ana Carvalho</span>
-    
-        </div> -->
         
     </div>
     <div class="addcoment">
@@ -193,17 +162,17 @@
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-
-                        <form action="http://127.0.0.1:5000/comentar">
+                        
+                        <form class="formInputs" action="http://127.0.0.1:5000/comentar" method="post">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="inputNome" name="Coment_nome" placeholder="Fulano Beltrano" value="{{ nome }}">
+                                <input type="text" class="form-control " id="inputNomeC" name="Coment_nome" placeholder="Fulano Beltrano" value="{{ session.nome }}">
                                 <label for="floatingInput">Nome</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="inputNome" name="Coment_assunto" placeholder="Fulano Beltrano">
+                                <input type="text" class="form-control" id="inputassuntC" name="Coment_palavra" placeholder="Fulano Beltrano">
                                 <label for="floatingInput">Palavra-chave</label>
                             </div>
-                            <textarea placeholder="Comente..." rows="2" name="comentario" maxlength="100"></textarea><br/>
+                            <textarea placeholder="Comente..." rows="2" id="textareaC" name="comentario" maxlength="100"></textarea><br/>
                             <button class="Botao"> <img src="{{ url_for('static', filename='img/IconEnviar.png') }}" style="width: 30px;" /> </button>
                         </form>
 
@@ -503,15 +472,15 @@
               
                 <form class="formInputs w-100" action="http://127.0.0.1:5000/atualizar" method="post">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="inputNome" name="User_nome" placeholder="Fulano Beltrano" value="{{ nome }}">
+                        <input type="text" class="form-control" id="inputNome" name="User_nome" placeholder="Fulano Beltrano" value="{{ session.nome }}">
                         <label for="floatingInput">Nome</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="Inputemail" name="User_email" placeholder="name@example.com" value="{{ email }}">
+                        <input type="email" class="form-control" id="Inputemail" name="User_email" placeholder="name@example.com" value="{{ session.email }}">
                         <label for="floatingInput">E-mail</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="inputSenha" name="User_senha" placeholder="Password" value="{{ senha }}">
+                        <input type="password" class="form-control" id="inputSenha" name="User_senha" placeholder="Password" value="{{ session.senha }}">
                         <label for="floatingPassword">Senha</label>
                     </div>
                     <br/>
