@@ -70,24 +70,24 @@ def Entrar():
     con.close()
     # comentarios = "hlylltt"
     if exist:
-        comentarios = getComents()
+        # comentarios = getComents()
+        return redirect(url_for('Home'))
 
-        return render_template("home.html", comentarios = comentarios)
     else: 
         return render_template("login.html", isUsed = True, message = "Dados incorretos")
 
 
 @app.route('/login/cadastrar', methods=["POST"])
 def cadastrar():
-    session["nome"] = request.form.get('User_nome')
-    session["email"] = request.form.get('User_email')
-    session["senha"] = request.form.get('User_senha')
+    session["nome"] = request.form.get('nome')
+    session["email"] = request.form.get('email')
+    session["senha"] = request.form.get('senha')
     # nome,email,senha = "123"
     # print(nome, email, senha)
 
     con = sqlite3.connect('banco.db')
     cursor = con.cursor()
-    comentarios = getComents()
+    # comentarios = getComents()
     
     isUsed = CheckUser(session["email"])
     
@@ -96,7 +96,7 @@ def cadastrar():
         con.commit()
         con.close()
 
-        return render_template("home.html", comentarios = comentarios)
+        return redirect(url_for('Home'))
 
     else: 
         con.close()
@@ -116,12 +116,30 @@ def comentar():
     cursor = con.cursor()
     cursor.execute("INSERT INTO comentarios(assunto, nome, comentario) VALUES(?,?,?)", (palavra, nome, comentario))
     con.commit()
-    con.close()
-    
-    comentarios = getComents()
-    
+    con.close()    
 
-    return render_template("home.html", comentarios = comentarios)
+    return redirect(url_for('Home'))
+
+
+@app.route('/editar', methods=["POST"])
+def editar():
+    con = sqlite3.connect('banco.db')
+    cursor = con.cursor()
+
+    nome = request.form.get('User_nome')
+    email = request.form.get('User_email')
+    senha = request.form.get('User_senha')
+
+    cursor.execute("UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE email = ? AND senha = ?", (nome, email, senha, session.get("email"), session.get("senha")))
+    con.commit()
+    con.close()
+
+    session["nome"] = nome
+    session["email"] = email
+    session["senha"] = senha
+
+    return redirect(url_for('Home'))
+
 
 @app.route('/logout', methods=["POST"])
 def Logout():
@@ -135,10 +153,7 @@ def Logout():
 
 @app.route('/Home', methods=["GET"])
 def Home():
+    comentarios = getComents()
     
-
-    return render_template("home.html")
-        
-
-
-    # cursor.close()
+    return render_template("home.html", comentarios = comentarios)
+    

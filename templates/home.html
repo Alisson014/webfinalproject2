@@ -29,7 +29,7 @@
         </div>
 
         <div class="menuButtons">
-            <button class="buttonIcon" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="{{url_for('static', filename='img/IconPerfil.png')}}" alt="Ícone de perfil"> </button>
+            <button class="buttonIcon" data-bs-toggle="modal" data-bs-target="#UpdateModal"><img src="{{url_for('static', filename='img/IconPerfil.png')}}" alt="Ícone de perfil"> </button>
             <button class="buttonIcon"><img src="{{url_for('static', filename='img/IconNotificacao.png')}}" alt="Ícone de e-mail"> </button>
             <form action="/logout" method="post">
                 <button class="buttonIcon"><img style="filter: invert(0);" src="{{url_for('static', filename='img/IconLogout.png')}}" alt="Ícone de e-mail"> </button>
@@ -461,7 +461,7 @@
     </footer>
 
     <!-- Modal Update dados -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="UpdateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -470,7 +470,7 @@
             </div>
             <div class="modal-body">
               
-                <form class="formInputs w-100" action="http://127.0.0.1:5000/atualizar" method="post">
+                <form class="formInputs w-100" action="http://127.0.0.1:5000/editar" method="post">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="inputNome" name="User_nome" placeholder="Fulano Beltrano" value="{{ session.nome }}">
                         <label for="floatingInput">Nome</label>
@@ -480,13 +480,13 @@
                         <label for="floatingInput">E-mail</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="inputSenha" name="User_senha" placeholder="Password" value="{{ session.senha }}">
+                        <input type="password" class="form-control" id="inputSenha" name="User_senha" placeholder="Password">
                         <label for="floatingPassword">Senha</label>
                     </div>
                     <br/>
     
                     <input class="form-control" type="submit" value="Salvar" />
-                    <input class="form-control" type="submit" value="Deletar" />
+                    <input class="form-control" type="button" value="Deletar" data-bs-toggle="modal" data-bs-target="#deleteModal"/>
                 </form>
                 <!-- <form action="http://127.0.0.1:5000/excluir">
                     
@@ -497,8 +497,28 @@
         </div>
       </div>
 
+      <!-- Modal Deletar -->
+      <!-- Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Tem certeza?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <p>Está ação é permanente, realmente deseja deletar sua conta?</p>
+                    <form class="formInputs">
+                        <input class="form-control" type="submit" value="Deletar" />
+                    </form>
 
-
+                </div>
+                <div class="modal-footer">
+                
+            </div>
+            </div>
+        </div>
 
     
     <script src="{{url_for('static', filename='js/script.js')}}">    </script>
